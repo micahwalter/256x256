@@ -1,13 +1,13 @@
 import os
 from flask import Flask
+from bin import random256
 
 app = Flask(__name__)
 
 @app.route('/')
 def twofiftysix():
-    return 'Hello World!'
+    return '256x256'
 
 @app.route('/random')
 def random():
-	execfile('bin/random256.py')
-	return 'hello random'
+	return random256.randomImage()
